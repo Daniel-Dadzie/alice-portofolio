@@ -1,0 +1,50 @@
+name: CI Quality Assurance & Build Pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa-validation:
+    name: Typecheck, Lint & Production Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript Static Type Check
+        run: npx tsc --noEmit
+
+      - name: ESLint Code Quality Check
+        run: npm run lint
+
+      - name: Next.js Production Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Verify Prerendered Static Artifacts
+        run: |
+          test -f .next/server/app/index.html || (echo "Error: index.html not generated" && exit 1)
+          echo "Prerendered static pages verified successfully."
