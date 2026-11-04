@@ -20,8 +20,8 @@ export interface ExperienceItem {
   title: string;
   organisation: string;
   location: string | null;
-  period: string; // "Aug 2024 – Present" or "Dates to be confirmed"
-  periodConfirmed: boolean; // false triggers a subtle visual indicator
+  period: string | null; // e.g. "August 2024 – Present", or null if unconfirmed
+  periodConfirmed: boolean;
   responsibilities: string[];
   transferableNote: string;
 }
@@ -47,23 +47,41 @@ export interface Certification {
   credentialUrl?: string; // optional — only when confirmed
 }
 
-// ─── QA Learning Journey ─────────────────────────────────────────────────────
+// ─── QA Learning Journey & Future Completed Projects ────────────────────────
 
 export type QAStatus =
   | 'Planned'
+  | 'Learning'
   | 'In Progress'
   | 'Executed'
   | 'Passed'
   | 'Failed'
   | 'Blocked';
 
+export interface QACompletedProject {
+  id: string;
+  title: string;
+  applicationUnderTest: string;
+  testingScope: string;
+  testingApproach: string;
+  testCasesCount?: number;
+  bugReportsCount?: number;
+  executionStatus: 'Executed' | 'Passed' | 'Failed';
+  summaryOfFindings: string;
+  lessonsLearned?: string;
+  evidenceUrl?: string;
+  reportDate?: string;
+}
+
 export interface QALearningArea {
   id: string;
   title: string;
   status: QAStatus;
   description: string;
-  tools: string[]; // tools being learned, NOT claimed as proficiencies
-  evidenceUrl?: string; // only populated when real evidence exists
+  keyConcepts: string[]; // Core syllabus concepts being learned
+  skillsBeingDeveloped: string[]; // Competency focus areas
+  targetDeliverable: string; // The genuine exercise output to be produced
+  completedProject?: QACompletedProject; // Populated only when genuine evidence exists
 }
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
@@ -87,4 +105,3 @@ export interface PersonalInfo {
   languages: string[];
   contact: ContactInfo;
 }
-

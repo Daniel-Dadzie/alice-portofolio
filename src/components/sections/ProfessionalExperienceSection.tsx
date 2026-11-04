@@ -7,25 +7,21 @@ export function ProfessionalExperienceSection() {
     <section id="experience" className="py-20 sm:py-24 border-b border-[#DDDCD4]">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="03 / Career Timeline"
+          eyebrow="Career Timeline"
           title="Professional Experience"
           description="Real-world experience spanning coding instruction, AI data annotation, IT systems support and customer problem resolution."
         />
 
         <div className="space-y-8 lg:space-y-10">
-          {experience.map((role, index) => (
+          {experience.map((role) => (
             <article
               key={role.id}
-              className="p-6 sm:p-8 lg:p-10 rounded-lg border border-[#DDDCD4] bg-white transition-all hover:border-[#BDBCAE]"
+              className="p-6 sm:p-8 lg:p-10 rounded-lg border border-[#DDDCD4] bg-white transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs"
             >
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 pb-6 mb-6 border-b border-[#DDDCD4]">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-semibold text-[#69745B] tracking-widest uppercase">
-                      0{index + 1}
-                    </span>
-                    <span className="text-xs text-[#DDDCD4]">&bull;</span>
-                    <span className="text-xs text-[#6F7167]">
+                  <div className="mb-2">
+                    <span className="text-xs font-semibold text-[#69745B] tracking-wider uppercase">
                       {role.organisation}
                     </span>
                   </div>
@@ -35,12 +31,14 @@ export function ProfessionalExperienceSection() {
                 </div>
 
                 <div className="flex flex-wrap lg:flex-col lg:items-end gap-2 sm:gap-3 text-xs text-[#6F7167]">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F8F7F3] border border-[#DDDCD4]">
-                    <Calendar className="w-3.5 h-3.5 text-[#69745B]" />
-                    <span className={role.periodConfirmed ? "font-medium text-[#252722]" : "italic"}>
-                      {role.period}
+                  {role.period && (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F8F7F3] border border-[#DDDCD4]">
+                      <Calendar className="w-3.5 h-3.5 text-[#69745B]" />
+                      <span className="font-medium text-[#252722]">
+                        {role.period}
+                      </span>
                     </span>
-                  </span>
+                  )}
 
                   {role.location && (
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F8F7F3] border border-[#DDDCD4]">

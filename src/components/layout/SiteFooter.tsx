@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 import { personal, navItems } from "@/lib/data";
 
 export function SiteFooter() {
@@ -11,7 +12,7 @@ export function SiteFooter() {
             <h3 className="font-serif-heading text-2xl text-[#252722] mb-2">
               {personal.name}
             </h3>
-            <p className="text-sm font-medium text-[#69745B] mb-4">
+            <p className="text-sm font-medium text-[#58624C] mb-4">
               {personal.title}
             </p>
             <p className="text-sm text-[#6F7167] leading-relaxed max-w-md">
@@ -49,21 +50,24 @@ export function SiteFooter() {
               <p>
                 <a
                   href={`mailto:${personal.contact.email}`}
-                  className="hover:text-[#252722] underline underline-offset-4 decoration-[#DDDCD4] transition-colors"
+                  className="hover:text-[#252722] underline underline-offset-4 decoration-[#DDDCD4] transition-colors inline-flex items-center gap-2"
                 >
-                  {personal.contact.email}
+                  <Mail className="w-3.5 h-3.5 text-[#69745B]" />
+                  <span>{personal.contact.email}</span>
                 </a>
               </p>
               <p>
                 <a
                   href={`tel:${personal.contact.phone.replace(/\s+/g, "")}`}
-                  className="hover:text-[#252722] transition-colors"
+                  className="hover:text-[#252722] transition-colors inline-flex items-center gap-2"
                 >
-                  {personal.contact.phone}
+                  <Phone className="w-3.5 h-3.5 text-[#69745B]" />
+                  <span>{personal.contact.phone}</span>
                 </a>
               </p>
-              <p className="text-xs text-[#6F7167] pt-1">
-                📍 {personal.contact.location}
+              <p className="text-xs text-[#6F7167] pt-1 inline-flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#69745B]" />
+                <span>{personal.contact.location}</span>
               </p>
             </div>
           </div>
@@ -74,9 +78,19 @@ export function SiteFooter() {
           <p>
             &copy; 2026 {personal.name}. All rights reserved.
           </p>
-          <p className="text-[11px]">
-            Designed with Editorial Premium &bull; Built with Next.js &amp; Tailwind CSS
-          </p>
+          <div className="flex items-center gap-6">
+            <span className="text-[11px] hidden md:inline">
+              Designed with Editorial Premium &bull; Built with Next.js &amp; Tailwind CSS
+            </span>
+            <a
+              href="#hero"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-[#69745B] hover:text-[#252722] transition-colors py-1 group"
+              aria-label="Back to top of page"
+            >
+              <span>Back to top</span>
+              <ArrowUp className="w-3.5 h-3.5 transition-transform duration-150 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

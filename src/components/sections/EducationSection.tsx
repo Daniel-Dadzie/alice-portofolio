@@ -7,7 +7,7 @@ export function EducationSection() {
     <section id="education" className="py-20 sm:py-24 border-b border-[#DDDCD4]">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="05 / Academic Foundation"
+          eyebrow="Academic Foundation"
           title="Education"
           description="Formal academic qualification providing an integrated grounding in computing, business information systems and technology operations."
         />
@@ -16,7 +16,7 @@ export function EducationSection() {
           {education.map((item) => (
             <div
               key={item.id}
-              className="p-6 sm:p-8 rounded-lg border border-[#DDDCD4] bg-white flex flex-col md:flex-row md:items-center justify-between gap-6"
+              className="p-6 sm:p-8 rounded-lg border border-[#DDDCD4] bg-white flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs"
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded bg-[#F8F7F3] border border-[#DDDCD4] text-[#69745B] shrink-0 mt-1">
@@ -43,9 +43,11 @@ export function EducationSection() {
                   <MapPin className="w-3.5 h-3.5 text-[#69745B]" />
                   <span>{item.location}</span>
                 </span>
-                <span className="italic text-[11px] text-[#6F7167]">
-                  Graduation: {item.graduationDate || "Date to be confirmed"}
-                </span>
+                {item.graduationDate && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F8F7F3] border border-[#DDDCD4]">
+                    <span>Graduation: {item.graduationDate}</span>
+                  </span>
+                )}
               </div>
             </div>
           ))}

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
-import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight, Download, Mail, MapPin } from "lucide-react";
 import { personal } from "@/lib/data";
 import { ProfileImagePlaceholder } from "@/components/ui/ProfileImagePlaceholder";
 
@@ -29,6 +29,13 @@ export function HeroSection() {
                 <MapPin className="w-3.5 h-3.5 text-[#69745B]" />
                 {personal.contact.location}
               </span>
+              <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-[#DDDCD4] text-xs font-medium text-[#252722]">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#69745B] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#69745B]"></span>
+                </span>
+                <span>Open to Opportunities</span>
+              </span>
             </div>
 
             {/* Headline in Serif Display */}
@@ -51,18 +58,19 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#69745B] hover:bg-[#58624C] text-white text-sm font-medium transition-colors shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#69745B]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#69745B] hover:bg-[#58624C] active:scale-[0.98] text-white text-sm font-medium transition-all duration-150 shadow-xs hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#69745B]"
               >
                 <Mail className="w-4 h-4" />
                 <span>Get in Touch</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5" />
               </Link>
 
               {cvExists && (
                 <a
                   href="/documents/Akoth-Alice-Ojuang-CV.pdf"
-                  download
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-[#DDDCD4] hover:border-[#69745B] hover:bg-[#F0EEE7] text-[#252722] text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B]"
+                  download="Akoth-Alice-Ojuang-CV.pdf"
+                  aria-label="Download Akoth Alice Ojuang' Curriculum Vitae (PDF)"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-[#DDDCD4] hover:border-[#69745B] hover:bg-[#F0EEE7] active:scale-[0.98] text-[#252722] text-sm font-medium transition-all duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B]"
                 >
                   <Download className="w-4 h-4 text-[#69745B]" />
                   <span>Download CV</span>
@@ -71,9 +79,10 @@ export function HeroSection() {
 
               <Link
                 href="#qa-journey"
-                className="text-sm font-medium text-[#252722] hover:text-[#69745B] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] transition-colors py-2"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#252722] hover:text-[#69745B] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] transition-colors duration-150 py-2"
               >
-                View QA Learning Journey &darr;
+                <span>View QA Learning Journey</span>
+                <ArrowDown className="w-4 h-4 text-[#69745B] transition-transform duration-150 group-hover:translate-y-0.5" />
               </Link>
             </div>
           </div>

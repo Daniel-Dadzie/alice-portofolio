@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { skillGroups } from "@/lib/data";
-import { Code, Cpu, FolderKanban, Network, Sparkles } from "lucide-react";
+import { ArrowRight, Code, Cpu, FolderKanban, Network, Sparkles } from "lucide-react";
 
 export function ExpertiseSection() {
   const groupIcons: Record<string, React.ReactNode> = {
@@ -15,7 +15,7 @@ export function ExpertiseSection() {
     <section id="expertise" className="py-20 sm:py-24 border-b border-[#DDDCD4]">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="02 / Skills &amp; Capabilities"
+          eyebrow="Skills &amp; Capabilities"
           title="Technical Expertise"
           description="A solid foundation developed through academic study, practical IT support roles, coding instruction and data quality operations."
         />
@@ -24,7 +24,7 @@ export function ExpertiseSection() {
           {skillGroups.map((group) => (
             <div
               key={group.id}
-              className={`p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white transition-all duration-200 hover:border-[#BDBCAE] hover:shadow-xs flex flex-col justify-between ${
+              className={`p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs flex flex-col justify-between ${
                 group.id === "professional-skills" ? "md:col-span-2 lg:col-span-2" : ""
               }`}
             >
@@ -40,7 +40,7 @@ export function ExpertiseSection() {
                   {group.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="px-3 py-1.5 rounded bg-[#F8F7F3] border border-[#DDDCD4] text-xs font-medium text-[#252722] hover:border-[#69745B] transition-colors"
+                      className="px-3 py-1.5 rounded bg-[#F8F7F3] border border-[#DDDCD4] text-xs font-medium text-[#252722] hover:border-[#69745B] hover:bg-[#EDF0EA] transition-all duration-150"
                     >
                       {skill}
                     </li>
@@ -63,9 +63,10 @@ export function ExpertiseSection() {
           </p>
           <a
             href="#qa-journey"
-            className="text-[#69745B] hover:text-[#58624C] font-semibold underline underline-offset-2 whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 text-[#69745B] hover:text-[#58624C] font-semibold underline underline-offset-2 whitespace-nowrap"
           >
-            Explore QA Learning Journey &rarr;
+            <span>Explore QA Learning Journey</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>

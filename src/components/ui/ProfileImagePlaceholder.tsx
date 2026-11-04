@@ -3,18 +3,25 @@ import path from "path";
 import Image from "next/image";
 
 export function ProfileImagePlaceholder() {
-  const imageRelativePath = "images/akoth-profile.jpg";
-  const absoluteImagePath = path.join(process.cwd(), "public", imageRelativePath);
-  const imageExists = fs.existsSync(absoluteImagePath);
+  const candidatePaths = [
+    "images/akoth-profile.png",
+    "images/akoth-profile.jpg",
+    "images/akoth-profile.jpeg",
+    "images/akoth-profile.webp",
+  ];
 
-  if (imageExists) {
+  const imageRelativePath = candidatePaths.find((rel) =>
+    fs.existsSync(path.join(process.cwd(), "public", rel))
+  );
+
+  if (imageRelativePath) {
     return (
-      <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] rounded-lg overflow-hidden border border-[#DDDCD4] shadow-xs">
+      <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] rounded-lg overflow-hidden border border-[#DDDCD4] bg-[#F0EEE7] shadow-sm transition-all duration-300 hover:border-[#BDBCAE] group">
         <Image
           src={`/${imageRelativePath}`}
           alt="Akoth Alice Ojuang' - Professional Portrait"
           fill
-          className="object-cover"
+          className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           sizes="(max-width: 640px) 280px, 320px"
           priority
         />

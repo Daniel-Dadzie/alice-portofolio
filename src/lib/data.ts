@@ -107,7 +107,7 @@ export const experience: ExperienceItem[] = [
     title: 'Associate Data Annotator',
     organisation: 'Sama AI',
     location: 'Nairobi, Kenya',
-    period: 'Dates to be confirmed',
+    period: null,
     periodConfirmed: false,
     responsibilities: [
       'Annotated datasets to support AI model training and development.',
@@ -124,7 +124,7 @@ export const experience: ExperienceItem[] = [
     title: 'Credit Control Assistant',
     organisation: 'Gain Ventures Ltd',
     location: null,
-    period: 'Dates to be confirmed',
+    period: null,
     periodConfirmed: false,
     responsibilities: [
       'Managed digital customer records with accuracy and consistency.',
@@ -140,7 +140,7 @@ export const experience: ExperienceItem[] = [
     title: 'ICT Attaché',
     organisation: 'Zetech University',
     location: 'Ruiru, Kenya',
-    period: 'Dates to be confirmed',
+    period: null,
     periodConfirmed: false,
     responsibilities: [
       'Installed, configured and maintained Windows and Linux operating systems.',
@@ -210,36 +210,102 @@ export const certifications: Certification[] = [
 
 export const qaLearningAreas: QALearningArea[] = [
   {
-    id: 'manual-testing',
+    id: 'website-manual-testing',
     title: 'Website Manual Testing',
     status: 'Planned',
     description:
-      'Learning to design test cases, perform functional and exploratory testing, document defects and produce structured test reports for web applications.',
-    tools: ['Browser DevTools', 'Spreadsheets / Test case documents'],
+      'Establishing a disciplined approach to evaluating responsive web applications through structured manual testing techniques, systematic edge-case discovery, and clear defect documentation.',
+    keyConcepts: [
+      'Functional testing',
+      'Positive & negative testing',
+      'Boundary-value analysis',
+      'Equivalence partitioning',
+      'Form validation',
+      'Exploratory testing',
+      'Basic regression testing',
+      'Defect reporting',
+    ],
+    skillsBeingDeveloped: [
+      'Test scenario authoring',
+      'Expected vs. actual result analysis',
+      'Defect severity & priority triage',
+      'Cross-browser verification',
+    ],
+    targetDeliverable:
+      'Structured test scenarios, execution log, and verified defect reports on a live web application.',
   },
   {
-    id: 'api-testing',
+    id: 'api-testing-postman',
     title: 'API Testing with Postman',
     status: 'Planned',
     description:
-      'Learning to test REST API endpoints using HTTP methods, validate response codes and payloads, and document findings using Postman collections.',
-    tools: ['Postman'],
+      'Learning to validate backend REST API endpoints, inspect request and response payloads, and assess service reliability independently from the graphical user interface.',
+    keyConcepts: [
+      'HTTP methods (GET, POST, PUT, PATCH, DELETE)',
+      'Headers & authentication fundamentals',
+      'Query parameters',
+      'Request bodies & JSON payloads',
+      'HTTP status codes (2xx, 4xx, 5xx)',
+      'Response payload validation',
+      'Negative & boundary testing',
+      'Authentication fundamentals',
+    ],
+    skillsBeingDeveloped: [
+      'Postman workspace & collection design',
+      'API contract validation',
+      'Header & token configuration',
+      'Status code verification',
+    ],
+    targetDeliverable:
+      'Documented Postman collection with parameterized requests, status validations, and negative test coverage.',
   },
   {
-    id: 'sql-validation',
-    title: 'SQL & Database Validation',
+    id: 'sql-database-validation',
+    title: 'SQL Database Validation',
     status: 'Planned',
     description:
-      'Learning to write basic SQL queries to verify data integrity, check for inconsistencies and validate expected records.',
-    tools: ['SQL (learning)'],
+      'Learning to verify data integrity directly at the database layer to confirm frontend transactions correctly write, update, filter, and persist records.',
+    keyConcepts: [
+      'SELECT queries',
+      'WHERE clause filtering',
+      'ORDER BY sorting',
+      'NULL values identification',
+      'Duplicate records detection',
+      'Data consistency checks',
+      'Basic validation queries',
+    ],
+    skillsBeingDeveloped: [
+      'Data integrity verification',
+      'Backend-to-frontend reconciliation',
+      'Boundary query formulation',
+      'Data anomaly detection',
+    ],
+    targetDeliverable:
+      'Validation query script verifying database state consistency against expected application outcomes.',
   },
   {
-    id: 'chatbot-testing',
+    id: 'ai-chatbot-testing',
     title: 'AI Chatbot Testing',
     status: 'Planned',
     description:
-      'Learning to evaluate conversational AI applications by testing intent recognition, context retention, edge cases and response consistency.',
-    tools: ['Conversation testing frameworks', 'Manual exploratory methods'],
+      'Applying software quality assurance principles to conversational AI interfaces, chatbots, and automation workflows — directly aligned with SimplyDone Africa’s core products.',
+    keyConcepts: [
+      'Intent recognition accuracy',
+      'Conversation flows & branch testing',
+      'Context retention across multi-turn dialogs',
+      'Invalid & malformed inputs',
+      'Unexpected questions handling',
+      'Fallback behaviour validation',
+      'Response consistency & tone',
+      'Edge cases discovery',
+    ],
+    skillsBeingDeveloped: [
+      'Conversational flow auditing',
+      'Boundary & intent stress-testing',
+      'Multi-turn dialog verification',
+      'Fallback path validation',
+    ],
+    targetDeliverable:
+      'Conversation test matrix with multi-turn transcripts, edge-case evaluations, and fallback behavior audits.',
   },
 ];
-

@@ -4,7 +4,8 @@
   --color-bg-primary: #F8F7F3;
   --color-bg-secondary: #F0EEE7;
   --color-text-primary: #252722;
-  --color-text-secondary: #6F7167;
+  --color-text-secondary: #65675C;
+  --color-text-secondary-dark: #65675C;
   --color-accent: #69745B;
   --color-accent-hover: #58624C;
   --color-accent-subtle: #EDF0EA;
@@ -20,7 +21,8 @@
   --bg-primary: #F8F7F3;
   --bg-secondary: #F0EEE7;
   --text-primary: #252722;
-  --text-secondary: #6F7167;
+  --text-secondary: #65675C;
+  --text-secondary-dark: #65675C;
   --accent: #69745B;
   --accent-hover: #58624C;
   --accent-subtle: #EDF0EA;
@@ -41,6 +43,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Editorial Typography Styles */
@@ -49,6 +52,11 @@ h1, h2, h3, .font-serif-heading {
   font-weight: 400;
   letter-spacing: -0.015em;
   color: var(--text-primary);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 /* Accessible focus outline */
@@ -94,6 +102,13 @@ textarea:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
+/* Smooth Scroll (Safely scoped to users without reduced motion preferences) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -103,5 +118,24 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Print Optimization (Clean PDF formatting for recruiters & hiring managers) */
+@media print {
+  header,
+  #mobile-nav-trigger,
+  footer a[href="#hero"] {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  article,
+  .editorial-container > div {
+    break-inside: avoid;
   }
 }

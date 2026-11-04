@@ -7,7 +7,7 @@ export function ContactSection() {
     <section id="contact" className="py-20 sm:py-24">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="07 / Inquiries"
+          eyebrow="Inquiries"
           title="Get in Touch"
           description="Open to opportunities in Software Quality Assurance, ICT Support, and Web Technologies. Let's discuss how my analytical foundation and attention to detail can add value to your team."
         />
@@ -16,7 +16,7 @@ export function ContactSection() {
           {/* Main Direct Contact Methods (8 columns) */}
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Email Card */}
-            <div className="p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between">
+            <div className="p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs">
               <div>
                 <div className="w-10 h-10 rounded-md bg-[#EDF0EA] border border-[#DDDCD4] flex items-center justify-center text-[#69745B] mb-4">
                   <Mail className="w-5 h-5" />
@@ -35,7 +35,7 @@ export function ContactSection() {
               <div className="mt-6 pt-4 border-t border-[#DDDCD4]">
                 <a
                   href={`mailto:${personal.contact.email}`}
-                  className="inline-flex items-center gap-2 text-xs font-medium text-[#69745B] hover:text-[#58624C] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-[#69745B] hover:text-[#58624C] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] active:scale-[0.98] transition-all duration-150"
                 >
                   <span>Send an Email</span>
                   <Send className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export function ContactSection() {
             </div>
 
             {/* Phone Card */}
-            <div className="p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between">
+            <div className="p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs">
               <div>
                 <div className="w-10 h-10 rounded-md bg-[#EDF0EA] border border-[#DDDCD4] flex items-center justify-center text-[#69745B] mb-4">
                   <Phone className="w-5 h-5" />
@@ -63,7 +63,7 @@ export function ContactSection() {
               <div className="mt-6 pt-4 border-t border-[#DDDCD4]">
                 <a
                   href={`tel:${personal.contact.phone.replace(/\s+/g, "")}`}
-                  className="inline-flex items-center gap-2 text-xs font-medium text-[#69745B] hover:text-[#58624C] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-[#69745B] hover:text-[#58624C] underline underline-offset-4 decoration-[#DDDCD4] hover:decoration-[#69745B] active:scale-[0.98] transition-all duration-150"
                 >
                   <span>Initiate Call</span>
                   <Phone className="w-3.5 h-3.5" />
@@ -72,7 +72,7 @@ export function ContactSection() {
             </div>
 
             {/* Location Card */}
-            <div className="sm:col-span-2 p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-[#F0EEE7] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="sm:col-span-2 p-6 sm:p-7 rounded-lg border border-[#DDDCD4] bg-[#F0EEE7] flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 hover:border-[#BDBCAE]">
               <div className="flex items-center gap-3.5">
                 <div className="w-10 h-10 rounded-md bg-white border border-[#DDDCD4] flex items-center justify-center text-[#69745B] shrink-0">
                   <MapPin className="w-5 h-5" />
@@ -93,7 +93,7 @@ export function ContactSection() {
           </div>
 
           {/* Recruiter Sidebar / Application Note (4 columns) */}
-          <div className="lg:col-span-4 p-6 sm:p-8 rounded-lg border border-[#DDDCD4] bg-white space-y-4">
+          <div className="lg:col-span-4 p-6 sm:p-8 rounded-lg border border-[#DDDCD4] bg-white space-y-4 transition-all duration-200 hover:border-[#BDBCAE]">
             <span className="inline-block px-2.5 py-1 rounded bg-[#EDF0EA] border border-[#DDDCD4] text-[11px] font-semibold uppercase tracking-wider text-[#69745B]">
               Application Notice
             </span>

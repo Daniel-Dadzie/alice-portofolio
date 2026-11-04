@@ -25,7 +25,7 @@ export function AboutSection() {
     <section id="about" className="py-20 sm:py-24 border-b border-[#DDDCD4]">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="01 / Background"
+          eyebrow="Background"
           title="About Me"
           description="A multidisciplinary technical foundation grounded in systems, accuracy and education."
         />
@@ -73,9 +73,9 @@ export function AboutSection() {
           </div>
 
           {/* Sidebar / Quick Profile Card (5 columns) */}
-          <div className="lg:col-span-5 bg-[#F0EEE7] border border-[#DDDCD4] rounded-lg p-6 sm:p-8 space-y-6">
+          <div className="lg:col-span-5 bg-[#F0EEE7] border border-[#DDDCD4] rounded-lg p-6 sm:p-8 space-y-6 transition-all duration-200 hover:border-[#BDBCAE]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#69745B] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#58624C] mb-2">
                 Professional Focus
               </p>
               <p className="font-serif-heading text-xl text-[#252722]">
@@ -94,7 +94,7 @@ export function AboutSection() {
                 {personal.languages.map((lang) => (
                   <span
                     key={lang}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border border-[#DDDCD4] text-xs font-medium text-[#252722]"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border border-[#DDDCD4] text-xs font-medium text-[#252722] transition-colors duration-150 hover:border-[#BDBCAE]"
                   >
                     <Globe className="w-3.5 h-3.5 text-[#69745B]" />
                     {lang}

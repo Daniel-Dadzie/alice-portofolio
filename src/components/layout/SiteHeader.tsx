@@ -15,7 +15,7 @@ export function SiteHeader() {
         <div className="editorial-container flex items-center justify-between h-20">
           {/* Brand Logo / Name */}
           <Link
-            href="#"
+            href="/"
             className="group flex flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B] rounded"
           >
             <span className="font-serif-heading text-xl sm:text-2xl text-[#252722] tracking-tight group-hover:text-[#69745B] transition-colors">
@@ -33,9 +33,10 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-[#6F7167] hover:text-[#252722] transition-colors relative py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B] rounded"
+                    className="group text-sm font-medium text-[#6F7167] hover:text-[#252722] transition-colors relative py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B] rounded"
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#69745B] transition-all duration-200 group-hover:w-full" />
                   </Link>
                 </li>
               ))}
@@ -43,7 +44,7 @@ export function SiteHeader() {
 
             <Link
               href="#contact"
-              className="px-4 py-2 rounded-md bg-[#69745B] hover:bg-[#58624C] text-white text-xs font-medium uppercase tracking-wider transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#69745B]"
+              className="px-4 py-2 rounded-md bg-[#69745B] hover:bg-[#58624C] active:scale-[0.98] text-white text-xs font-medium uppercase tracking-wider transition-all duration-150 shadow-xs hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#69745B]"
             >
               Get in Touch
             </Link>
@@ -52,10 +53,12 @@ export function SiteHeader() {
           {/* Mobile Menu Trigger */}
           <button
             type="button"
+            id="mobile-nav-trigger"
             onClick={() => setMobileMenuOpen(true)}
             className="lg:hidden p-2 text-[#252722] hover:text-[#69745B] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B] rounded"
             aria-label="Open navigation menu"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-dialog"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -67,6 +70,7 @@ export function SiteHeader() {
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         items={navItems}
+        triggerId="mobile-nav-trigger"
       />
     </>
   );

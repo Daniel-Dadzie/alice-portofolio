@@ -7,21 +7,21 @@ export function CertificationsSection() {
     <section id="certifications" className="py-20 sm:py-24 border-b border-[#DDDCD4]">
       <div className="editorial-container">
         <SectionHeader
-          eyebrow="06 / Continuing Education"
+          eyebrow="Continuing Education"
           title="Certifications"
           description="Verified credentials in cybersecurity, artificial intelligence, digital skills and application development."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certifications.map((cert, index) => (
+          {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="p-6 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between transition-all hover:border-[#BDBCAE]"
+              className="p-6 rounded-lg border border-[#DDDCD4] bg-white flex flex-col justify-between transition-all duration-200 ease-out hover:border-[#BDBCAE] hover:-translate-y-0.5 hover:shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-[#DDDCD4]">
                   <span className="text-xs font-semibold text-[#69745B] uppercase tracking-wider">
-                    Cert 0{index + 1}
+                    Credential
                   </span>
                   <Award className="w-4 h-4 text-[#69745B]" />
                 </div>
