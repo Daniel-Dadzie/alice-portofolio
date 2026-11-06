@@ -139,7 +139,7 @@ export const experience: ExperienceItem[] = [
     id: 'zetech-ict',
     title: 'ICT Attaché',
     organisation: 'Zetech University',
-    location: 'Ruiru, Kenya',
+    location: 'Nairobi, Kenya',
     period: null,
     periodConfirmed: false,
     responsibilities: [
