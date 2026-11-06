@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Download, Mail, MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight, Download, Mail } from "lucide-react";
 import { personal } from "@/lib/data";
 import { ProfileImagePlaceholder } from "@/components/ui/ProfileImagePlaceholder";
 
@@ -20,24 +20,6 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Main Hero Copy (8 columns on lg) */}
           <div className="lg:col-span-8 flex flex-col items-start">
-            {/* Meta Eyebrow */}
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-md bg-[#EDF0EA] border border-[#DDDCD4] text-xs font-medium uppercase tracking-wider text-[#69745B]">
-                {personal.title}
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs text-[#6F7167]">
-                <MapPin className="w-3.5 h-3.5 text-[#69745B]" />
-                {personal.contact.location}
-              </span>
-              <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-[#DDDCD4] text-xs font-medium text-[#252722]">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#69745B] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#69745B]"></span>
-                </span>
-                <span>Open to Opportunities</span>
-              </span>
-            </div>
-
             {/* Headline in Serif Display */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif-heading text-[#252722] leading-[1.15] tracking-tight mb-6">
               Thoughtful testing.
