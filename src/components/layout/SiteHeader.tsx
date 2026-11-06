@@ -55,12 +55,13 @@ export function SiteHeader() {
             type="button"
             id="mobile-nav-trigger"
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-[#252722] hover:text-[#69745B] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B] rounded"
+            className="lg:hidden flex items-center gap-2 px-3 py-1.5 text-[#252722] hover:text-[#69745B] bg-white hover:bg-[#F0EEE7] border border-[#DDDCD4] hover:border-[#69745B] transition-all rounded-lg shadow-xs active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#69745B]"
             aria-label="Open navigation menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation-dialog"
           >
-            <Menu className="w-6 h-6" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#65675C]">Menu</span>
+            <Menu className="w-4 h-4 text-[#252722]" />
           </button>
         </div>
       </header>
